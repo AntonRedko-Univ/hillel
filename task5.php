@@ -18,7 +18,7 @@ class Predators extends Animals
         return 1;
     }
 
-    function func(string $var)
+    function func()
     {
         print_r('Predators dont eat vegetables');
     }
@@ -31,7 +31,7 @@ class Herbivores extends Animals
         return 2;
     }
 
-    function func(string $var)
+    function func()
     {
         print_r('Herbivores eat vegetables');
     }
@@ -43,7 +43,7 @@ class Ships extends Vehicle
     {
         return 3;
     }
-    function func(string $var)
+    function func()
     {
         print_r('Ships can swim');
     }
@@ -55,7 +55,7 @@ class Cars extends Vehicle
     {
         return 4;
     }
-    function func(string $var)
+    function func()
     {
         print_r('Cars can ride by the road');
     }
@@ -67,28 +67,36 @@ class FreightCars extends Vehicle
     {
         return 5;
     }
-    function func(string $var)
+    function func()
     {
         print_r('Freight cars can carry heavy loads');
     }
 }
 
-class D
+class A
 {
     function func(Animals $obj){
         return $obj->func('string');
     }
 }
 
+class V
+{
+    function func(Vehicle $obj){
+        return $obj ->func('string');
+    }
+}
+
 $objPredators = new Predators();
 $objHerbivores = new Herbivores();
-//$objShips = new Ships();
-//$objCars = new Cars();
-//$objFreightCars = new FreightCars();
-$objD = new D;
+$objShips = new Ships();
+$objCars = new Cars();
+$objFreightCars = new FreightCars();
+$objA = new A;
+$objV = new V;
 
-$objD->func($objPredators);
-//$objD->test($objCars);
-//$objD->test($objShips);
-//$objD->test($objFreightCars);
-//
+
+echo $objA->func($objPredators);
+$objV->func($objCars);
+$objV->func($objShips);
+$objV->func($objFreightCars);
