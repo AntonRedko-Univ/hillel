@@ -1,18 +1,24 @@
 <?php
+$animal = 'dog';
 
-class AnimalFactory
+$dog = function() use ($animal)
 {
-    public function CreateAnimal($type)
+            print_r('Added new dog');
+    };
+
+$cat = function () use ($animal)
+{
+            print_r('Added new cat');
+    };
+
+$creator = function () use ($animal, $dog, $cat){
+    var_dump($animal);
+    if($animal == 'dog')
     {
-        $dog = function () use ($type) {
-            if ($type == 'dog') {
-                return new Dog();
-            }
-        };
-        $cat = function () use ($type){
-            if ($type == 'cat'){
-                return new Cat();
-            }
-        };
+        $dog();
+    }else{
+        $cat();
     }
-}
+
+};
+$creator();
