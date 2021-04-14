@@ -126,9 +126,6 @@ echo '<pre>';
 // TRAIT //
 
 
-$volume = 2;
-$frequency = 5000;
-$pressure = 0.84;
 
 trait Counting
 {
