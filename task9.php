@@ -233,9 +233,9 @@ class Sorter
         $this->sorter = $sorter;
     }
 
-    public function sort(array $dataset): array
+    public function sort(array $array): array
     {
-        return $this->sorter->sort($dataset);
+        return $this->sorter->sort($array);
     }
 }
 
@@ -245,4 +245,10 @@ $sorter = new Sorter(new BinarySortStrategy());
 $sorter->sort($array);
 
 $sorter = new Sorter(new InterpolationSortStrategy());
+$sorter->sort($array);
+
+$sorter = new Sorter(new ConsistentSortStrategy());
+$sorter->sort($array);
+
+$sorter = new Sorter(new StupidSortStrategy());
 $sorter->sort($array);
